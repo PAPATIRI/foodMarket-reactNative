@@ -1,8 +1,10 @@
+import 'react-native-gesture-handler';
 import type {Node} from 'react';
 import React from 'react';
 import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {SplashScreen} from './pages';
+import {NavigationContainer} from '@react-navigation/native';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -37,7 +39,11 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return <SplashScreen />;
+  return (
+    <NavigationContainer>
+      <SplashScreen />
+    </NavigationContainer>
+  );
 };
 
 export default App;
