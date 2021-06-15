@@ -7,17 +7,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import Router from './router';
 
 const App = () => {
-    const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'dark';
 
-    return (
-        <NavigationContainer>
-            {/* <SplashScreen />
+  return (
+    <NavigationContainer>
+      {/* <SplashScreen />
             <SignIn /> */}
-            <Router />
-            {/* <SignUp /> */}
-            {/* <SignUpAddress /> */}
-        </NavigationContainer>
-    );
+      <Router />
+      {/* <SignUp /> */}
+      {/* <SignUpAddress /> */}
+    </NavigationContainer>
+  );
 };
 
 export default App;

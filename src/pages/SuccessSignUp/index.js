@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native'
 import {IlSuccessSignUp} from '../../assets'
 import {Button, Gap} from '../../components'
 
-const SuccessSignUp = () => {
+const SuccessSignUp = ({navigation}) => {
     return (
         <View style={styles.page}>
             <IlSuccessSignUp />
@@ -14,12 +14,14 @@ const SuccessSignUp = () => {
             <Text style={styles.subTitle}>some foods as a self-reward</Text>
             <Gap height={30} />
             <View style={styles.buttonContainer}>
-                <Button text="Find Foods" />
+                <Button text="Find Foods" onPress={() => navigation.replace('MainApp')} />
             </View>
         </View>
     )
 }
+
 export default SuccessSignUp
+
 const styles = StyleSheet.create({
     page: {
         flex: 1,
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
         color: '#020202',
     },
     subTitle: {
+        textAlign: 'center',
         fontSize: 14,
         fontFamily: 'Poppins-light',
         color: '#8d92a3'
@@ -39,7 +42,5 @@ const styles = StyleSheet.create({
     buttonContainer: {
         width: '100%',
         paddingHorizontal: 80
-
-
     }
 })
