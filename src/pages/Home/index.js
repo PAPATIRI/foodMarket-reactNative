@@ -7,28 +7,31 @@ import {
   FoodDummy4,
   ProfileDummy,
 } from '../../assets';
-import {FoodCard} from '../../components/molecules';
+import {
+  FoodCard,
+  HomeTabSection,
+  HomeProfile,
+} from '../../components/molecules';
 import {Gap} from '../../components';
 
 const Home = () => {
   return (
-    <View>
-      <View style={Styles.profileContainer}>
-        <View>
-          <Text style={Styles.appName}>FoodMarket</Text>
-          <Text style={Styles.desc}>Let's get some foods</Text>
-        </View>
-        <Image style={Styles.profile} source={ProfileDummy} />
+    <View style={Styles.page}>
+      <HomeProfile />
+      <View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={Styles.foodCardContainer}>
+            <Gap width={24} />
+            <FoodCard image={FoodDummy1} />
+            <FoodCard image={FoodDummy2} />
+            <FoodCard image={FoodDummy3} />
+            <FoodCard image={FoodDummy4} />
+          </View>
+        </ScrollView>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <View style={Styles.foodCardContainer}>
-          <Gap width={24} />
-          <FoodCard image={FoodDummy1} />
-          <FoodCard image={FoodDummy2} />
-          <FoodCard image={FoodDummy3} />
-          <FoodCard image={FoodDummy4} />
-        </View>
-      </ScrollView>
+      <View style={Styles.tabContainer}>
+        <HomeTabSection />
+      </View>
     </View>
   );
 };
@@ -36,30 +39,14 @@ const Home = () => {
 export default Home;
 
 const Styles = StyleSheet.create({
-  profileContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 24,
-    paddingTop: 32,
-    paddingBottom: 24,
-    backgroundColor: 'white',
-  },
-  appName: {
-    fontSize: 22,
-    fontFamily: 'Poppins-Medium',
-    color: '#020202',
-  },
-  desc: {
-    fontSize: 14,
-    fontFamily: 'Poppins-Light',
-    color: '#8d92a3',
-  },
-  profile: {
-    width: 50,
-    height: 50,
-    borderRadius: 8,
+  page: {
+    flex: 1,
   },
   foodCardContainer: {
     flexDirection: 'row',
+    marginVertical: 12,
+  },
+  tabContainer: {
+    flex: 1,
   },
 });
